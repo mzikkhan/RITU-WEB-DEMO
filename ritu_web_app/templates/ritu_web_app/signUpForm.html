@@ -1,0 +1,79 @@
+
+<!--This has a problem with radio buttons
+all item gets selected when male is selected and other 2 button cant be selected at first
+need to fix this-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritu-Create your Account</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'signUpForm.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="title">SignUp Form</div>
+        
+        <form action="#">
+            <div class="user-details">
+                <div class="inputBox">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="Enter Your Full Name" required>
+                </div>
+                <div class="inputBox">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Enter Your Username" required>
+                </div>
+                <div class="inputBox">
+                    <span class="details">Email</span>
+                    <input type="text" placeholder="Enter Your Email" required>
+                </div>
+                <div class="inputBox">
+                    <span class="details">Phone Number</span>
+                    <input type="text" placeholder="Enter Your Phone number" required>
+                </div>
+                <div class="inputBox">
+                    <span class="details">Address</span>
+                    <input type="text" placeholder="Enter Your address" required>
+                </div>
+                <div class="inputBox">
+                    <span class="details">Password</span>
+                    <input type="text" placeholder="Enter a strong password" required>
+                </div>
+                <div class="inputBox">
+                    <span class="details">Confirm Password</span>
+                    <input type="text" placeholder="Confirm Password" required>
+                </div>
+            </div>
+            <div class="genderDetails">
+                <input type="radio" name="gender" id="genderDot1">
+                <input type="radio" name="gender" id="genderDot2">
+                <input type="radio" name="gender" id="genderDot3">
+
+                <span class="genderTitle">Gender</span>
+                <div class="category">
+                   <label for="genderDot1">
+                       <span class="dotOne"></span>
+                       <span class="gender">Male</span>
+                   </label>
+                   <label for="genderDot2">
+                    <span class="dotTwo"></span>
+                    <span class="gender">Female</span>
+                </label> 
+                <label for="genderDot3">
+                    <span class="dotThree"></span>
+                    <span class="gender">Prefer Not to say</span>
+                </label>  
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="SignUp">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

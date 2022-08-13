@@ -1,0 +1,78 @@
+body{
+    font-family: 'Roboto', sans-serif;
+  }
+  .navbar{
+    border-bottom: #5cdb95 solid 2px;
+  }
+  .navbar .navbar-brand{
+    color: #5cdb95 !important;
+    font-size: 24px;
+  }
+  
+  .nav-link{
+    text-transform: uppercase;
+  }
+  
+  .nav-link:hover{
+    color: #5cdb95;
+  }
+  
+  #header{
+    background: url('../images/leaves.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  #header .overlay{
+    background-color: rgba(26, 0, 26, 0.4);
+    height: 100vh;
+  
+  }
+  
+  #header1{
+    background: url('../images/leaves2.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  #header1 .overlay{
+    background-color: rgba(26, 0, 26, 0.4);
+    height: 100vh;
+  
+  }
+  
+  #header2{
+    background: url('../images/leaves3.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  #header2 .overlay{
+    background-color: rgba(26, 0, 26, 0.4);
+    height: 100vh;
+  
+  }
+  
+  h1{
+    margin-top: 20px;
+  }
+  
+  .btn{
+      cursor: pointer;
+      background-color: #5cdb95;
+  }
+  .btn:hover{
+    background-color: #5cdb95;
+  }
+  
+  h3{
+    font-size: 17px;
+    font-weight: bold;
+  }
+  
+  #features {
+    color: #5cdb95;
+    cursor: pointer;
+  
+  }
+  

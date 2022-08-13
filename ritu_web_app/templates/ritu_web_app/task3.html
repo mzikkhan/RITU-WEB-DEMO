@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Task 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'task1.css' %}">
+    <script src="https://kit.fontawesome.com/2c5d01c5ac.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+      <a class="navbar-brand" href="#">RITU</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'users:menu' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:profileCard' %}">Profile</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'ritu_web_app:leaderboard' %}">Leaderboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:marketplace' %}">Marketplace</a></li>
+        </ul>
+      </div>
+
+    </nav>
+
+
+    <header id="header">
+      <div class="overlay">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col">
+              <h1 class="display-4" style="color:rgb(234, 245, 245)">Task 3</h1>
+              <p  style="color: aliceblue">Energy saves trees!<br> Replace all your filament bulbs with Energy-Saving
+              bulbs! </p>
+          <label for="myfile">Select a file:</label>
+          <input type="file" id="myfile" name="myfile"><br><br>
+              <a href="{% url 'ritu_web_app:FinalMessege' %}"><button type="button" class="btn btn-warning px-3">Upload</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+        <!-- footer section start -->
+        <footer>
+          <div>
+          <span>Created By <a href="#">Zaed Absara Farhan</a>    |  <span  class="far fa-copyright"></span>  2022 All rights reserved.</span>
+          </div>
+        </footer>
+
+</html>

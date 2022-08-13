@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RITU</title>
+    <link rel="stylesheet" href="{% static 'homepage.css' %}">
+  </head>
+  <body>
+    <div class="banner">
+      <div class="navbar">
+        <img src="{% static 'ritu (2).png' %}" class="ritu">
+        <ul>
+          <li><a href="{% url 'ritu_web_app:aboutUs' %}">About Us</a></li>
+          <li><a href="{% url 'ritu_web_app:contactUs' %}">Contact Us</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="content">
+      <h1>RITU</h1>
+      <p> Play and complete tasks to fight <b>Climate Change</b> and get a chance to win <b>50K</b>! <br>Do you think you have what it takes?</p>
+      <div>
+        <a href="{% url 'users:login' %}">
+          <button type="button"><span></span>Log in</button></a>
+        <a href="{% url 'users:signup' %}">
+          <button type="button"><span></span>Sign up</button></a>
+      </div>
+    </div>
+
+        <!-- footer section start -->
+    <!-- <footer>
+      <span>Created By <a href="https://m.facebook.com/zaedkhan21">Code Parina</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
+    </footer> -->
+
+  </body>
+</html>

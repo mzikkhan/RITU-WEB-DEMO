@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Game Over</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'FinalMessege.css' %}">
+    <script src="https://kit.fontawesome.com/2c5d01c5ac.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+      <a class="navbar-brand" href="#">RITU</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Leaderboard</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#">Marketplace</a></li> -->
+        </ul>
+      </div>
+
+    </nav>
+
+    <header id="header2">
+      <div class="overlay">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col">
+              <h1 class="display-4">Game Over</h1>
+              <iframe width="300" height="154" src="https://w2.countingdownto.com/4210193" frameborder="0"></iframe>
+              <p class="text-muted">Thank you for playing with us! Please wait until the timer counts down to see the winner!</p>
+              <a href="{% url 'ritu_web_app:leaderboard' %}"><button type="button" class="btn btn-warning px-3">Leaderboard</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+
+</html>
