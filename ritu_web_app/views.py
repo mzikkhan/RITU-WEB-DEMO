@@ -97,7 +97,7 @@ def task1(request):
         addingUrl.addTextProof_1(file)
         
         
-        # #inserting data in leaderboard
+        #inserting data in leaderboard
         
         addingInLeaderboard=updatedLeaderboard.Leaderboards(player)
         addingInLeaderboard.insertDataInLeaderboard()
@@ -110,7 +110,7 @@ def task1(request):
 def task2(request):
     if request.method=="POST":
         text=request.POST['task_2_url']
-        file=request.FILES['file']
+        file=request.FILES.get('file')
         player = request.user.username
         
         #Calculating score
@@ -138,7 +138,7 @@ def task2(request):
 def task3(request):
     if request.method=="POST":
         text=request.POST['task_3_url']
-        file=request.FILES['file']
+        file=request.FILES.get('file')
         player = request.user.username
         
         #Calculating score

@@ -4,7 +4,7 @@ from django.db import connections
 from . models import Task1Proof,Task2Proof,Task3Proof
 class TextUrl: 
 
-    def __init__(self,points='',text="", player="") :
+    def __init__(self,points,text="", player="") :
         self.text=text
         # self.time_added=time_added
         self.player=player
