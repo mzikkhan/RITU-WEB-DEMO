@@ -49,87 +49,87 @@ class Task3Proof(models.Model):
     def __str(self):
         return self.player  
 
-# #Proof of task 1 submission : URL of facebook post/drive link
-# class Task1Text(models.Model):
-#     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
-#     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
-#     time_added = models.DateTimeField(auto_now_add=True,null=True,blank=True)
-#     earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
-#     def __str__(self):
-#         return f"{self.text[:50]}..."
+#Proof of task 1 submission : URL of facebook post/drive link
+class Task1Text(models.Model):
+    player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
+    text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
+    time_added = models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
+    def __str__(self):
+        return f"{self.text[:50]}..."
 
-# #Proof of task 2 submission : URL of facebook post/drive link
-# class Task2Text(models.Model):
-#     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
-#     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
-#     time_added = models.DateTimeField(auto_now_add=True,null=True,blank=True)
-#     earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
+#Proof of task 2 submission : URL of facebook post/drive link
+class Task2Text(models.Model):
+    player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
+    text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
+    time_added = models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
 
-#     def __str__(self):
-#         return f"{self.text[:50]}..."
+    def __str__(self):
+        return f"{self.text[:50]}..."
 
-# #Proof of task 3 submission : URL of facebook post/drive link
-# class Task3Text(models.Model):
-#     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
-#     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
-#     time_added = models.DateTimeField(auto_now_add=True,null=True,blank=True)
-#     earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
+#Proof of task 3 submission : URL of facebook post/drive link
+class Task3Text(models.Model):
+    player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
+    text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
+    time_added = models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
 
-#     def __str__(self):
-#         return f"{self.text[:50]}..."
-
-
-
-# #Points table for leaderboard
-# class Leaderboard(models.Model):
-#     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
-#     name=models.CharField(max_length=100,null=True,blank=True,verbose_name="Name")
-#     earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
-
-#     def __str__(self):
-#         return self.player.username
+    def __str__(self):
+        return f"{self.text[:50]}..."
 
 
 
-# #The items to be sold in marketplace for various tasks
-# class Marketplace(models.Model):
-#     product_name=models.CharField(null=False,blank=False,max_length=100,verbose_name="Name")
-#     product_desc=models.CharField(null=False,blank=False,max_length=150,verbose_name="Description")
-#     product_price=models.CharField(max_length=20,null=False,blank=False,verbose_name="Price")
-#     product_img=models.ImageField(null=True,blank=True,verbose_name="Image",upload_to='marketplace/')
+#Points table for leaderboard
+class Leaderboard(models.Model):
+    player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
+    name=models.CharField(max_length=100,null=True,blank=True,verbose_name="Name")
+    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
 
-#     def __str__(self):
-#         return self.product_name
+    def __str__(self):
+        return self.player.username
 
 
-# class Orders(models.Model):
-#     playerID=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
-#     productID=models.ForeignKey(Marketplace,null=False, blank=False,on_delete=models.CASCADE)
+
+#The items to be sold in marketplace for various tasks
+class Marketplace(models.Model):
+    product_name=models.CharField(null=False,blank=False,max_length=100,verbose_name="Name")
+    product_desc=models.CharField(null=False,blank=False,max_length=150,verbose_name="Description")
+    product_price=models.CharField(max_length=20,null=False,blank=False,verbose_name="Price")
+    product_img=models.ImageField(null=True,blank=True,verbose_name="Image",upload_to='marketplace/')
+
+    def __str__(self):
+        return self.product_name
+
+
+class Orders(models.Model):
+    playerID=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
+    productID=models.ForeignKey(Marketplace,null=False, blank=False,on_delete=models.CASCADE)
     
-#     def __str__(self) -> str:
-#         return self.playerID
+    def __str__(self) -> str:
+        return self.playerID
 
 
 
 
-# #Databases for orders for ADMIN purpose
+#Databases for orders for ADMIN purpose
 
-# class OrderData(models.Model):
-#     playerID=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
-#     playerName=models.CharField(null=True,blank=True,max_length=100)
-#     productid=models.CharField(null=False,blank=False,max_length=20)
-#     product_name=models.CharField(null=False,blank=False, max_length=100)
-#     productPrice=models.CharField(null=False,blank=False,max_length=10)
-#     deliveryAddress=models.CharField(null=True,blank=True,max_length=300)
-#     contactNum=models.CharField(null=True,blank=True,max_length=20)
-#     time=models.DateTimeField(auto_now_add=True,null=True,blank=True)
-#     def __str__(self):
-#         return self.product_name
+class OrderData(models.Model):
+    playerID=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
+    playerName=models.CharField(null=True,blank=True,max_length=100)
+    productid=models.CharField(null=False,blank=False,max_length=20)
+    product_name=models.CharField(null=False,blank=False, max_length=100)
+    productPrice=models.CharField(null=False,blank=False,max_length=10)
+    deliveryAddress=models.CharField(null=True,blank=True,max_length=300)
+    contactNum=models.CharField(null=True,blank=True,max_length=20)
+    time=models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    def __str__(self):
+        return self.product_name
 
-# class Messages(models.Model):
-#     name=models.CharField(max_length=50,null=False,blank=False)
-#     email=models.EmailField(max_length=50,null=False,blank=False)
-#     message=models.CharField(max_length=500,null=True,blank=True)
+class Messages(models.Model):
+    name=models.CharField(max_length=50,null=False,blank=False)
+    email=models.EmailField(max_length=50,null=False,blank=False)
+    message=models.CharField(max_length=500,null=True,blank=True)
     
-#     def __str__(self) :
-#         return self.email
+    def __str__(self) :
+        return self.email
