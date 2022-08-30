@@ -15,14 +15,12 @@ class Leaderboards:
         
         #checking if the player is already in the leaderboard
         
-        
         findingPlayer=Leaderboard.objects.raw("SELECT id, player_id FROM ritu_web_app_leaderboard WHERE player_id='"+self.username+"'")
         playername=''
         
         for player in findingPlayer:
             playername=player.player_id
             
-        
         #chcking whether the player exists in leaderboard
         
         if (playername==""):
@@ -33,35 +31,37 @@ class Leaderboards:
                 getTask1Points=[]
                 task1points=0.0
                 for task in task1:
-                    getTask1Points.append(str(task.earnedPoints))
+                    getTask1Points.append(task.earnedPoints)
                 if(len(getTask1Points)!=0):
-                    task1points=float(max(getTask1Points))
+                    task1points=max(getTask1Points)
                 
             
                 #getting points for particular user from task2 table
                 task2=Task2Text.objects.raw("SELECT id,player_id, earnedPoints FROM ritu_web_app_task2text WHERE player_id='"+self.username+"'")
                 getTask2Points=[]
                 for task in task2:
-                    getTask2Points.append(str(task.earnedPoints))
+                    getTask2Points.append(task.earnedPoints)
                 task2points=0.0
                 if(len(getTask2Points)!=0):
-                    task2points=float(max(getTask2Points))
+                    task2points=max(getTask2Points)
                 
                 
                 #getting points for particular user from task3 table
                 task3=Task3Text.objects.raw("SELECT id,player_id, earnedPoints FROM ritu_web_app_task3text WHERE player_id='"+self.username+"'")
                 getTask3Points=[]
                 for task in task3:
-                    getTask3Points.append(str(task.earnedPoints))
+                    getTask3Points.append(task.earnedPoints)
                 task3points=0.0
-                if(len(getTask2Points)!=0):
-                    task3points=float(max(getTask2Points))
+                if(len(getTask3Points)!=0):
+                    task3points=max(getTask3Points)
+                
                 
                 
                 leaderboardPoint=round((task1points+task2points+task3points),5)
-                print(f"Leaderboard Point: {leaderboardPoint}")
+                
+                
                 db_cursor=connections['default'].cursor()
-                db_cursor.execute("INSERT INTO ritu_web_app_leaderboard(earnedPoints,player_id,name)VALUES('"+str(leaderboardPoint)+"','"+self.username+"','"+name+"' )")
+                db_cursor.execute("INSERT INTO ritu_web_app_leaderboard(earnedPoints,player_id,name)VALUES('"+str(leaderboardPoint)+"','"+self.username+"','"+name+"')")
         
         
         
@@ -71,9 +71,11 @@ class Leaderboards:
                 task1=Task1Text.objects.raw("SELECT id,player_id, earnedPoints FROM ritu_web_app_task1text WHERE player_id='"+self.username+"'")
                 getTask1Points=[]
                 for task in task1:
-                    getTask1Points.append(str(task.earnedPoints))
+                    getTask1Points.append(task.earnedPoints)
                 
-                task1points=float(max(getTask1Points))
+                task1points=0.0
+                if(len(getTask1Points)!=0):
+                    task1points=max(getTask1Points)
                 
                 
                 
@@ -81,10 +83,10 @@ class Leaderboards:
                 task2=Task2Text.objects.raw("SELECT id,player_id, earnedPoints FROM ritu_web_app_task2text WHERE player_id='"+self.username+"'")
                 getTask2Points=[]
                 for task in task2:
-                    getTask2Points.append(str(task.earnedPoints))
+                    getTask2Points.append(task.earnedPoints)
                 task2points=0.0
                 if(len(getTask2Points)!=0):
-                    task2points=float(max(getTask2Points))
+                    task2points=max(getTask2Points)
                 
                 
                 
@@ -92,10 +94,12 @@ class Leaderboards:
                 task3=Task3Text.objects.raw("SELECT id,player_id, earnedPoints FROM ritu_web_app_task3text WHERE player_id='"+self.username+"'")
                 getTask3Points=[]
                 for task in task3:
-                    getTask3Points.append(str(task.earnedPoints))
+                    getTask3Points.append(task.earnedPoints)
                 task3points=0.0
-                if(len(getTask2Points)!=0):
-                    task3points=float(max(getTask2Points))
+                if(len(getTask3Points)!=0):
+                    task3points=max(getTask3Points)
+                
+                
                 
                 
                 

@@ -17,7 +17,7 @@ class Players(models.Model):
     mobileNumber=models.CharField(null=False,blank=False,max_length=15)
     email=models.EmailField(null=False,blank=False,max_length=100)
     address=models.CharField(null=False,blank=False,max_length=100)
-    picture=models.ImageField(default='images/default.png',null=True,blank=True,upload_to='images/')
+    picture=models.ImageField(default='default.png',null=True,blank=True,upload_to='images/')
 
     def __str__(self) :
         return self.username
@@ -54,7 +54,7 @@ class Task1Text(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
     time_added = models.DateTimeField(auto_now_add=True,null=True,blank=True)
-    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
+    earnedPoints=models.FloatField(null=True,blank=True,verbose_name='Points')
     def __str__(self):
         return f"{self.text[:50]}..."
 
@@ -63,7 +63,7 @@ class Task2Text(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
     time_added = models.DateTimeField(auto_now_add=True,null=True,blank=True)
-    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
+    earnedPoints=models.FloatField(null=True,blank=True,verbose_name='Points')
 
     def __str__(self):
         return f"{self.text[:50]}..."
@@ -73,7 +73,7 @@ class Task3Text(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
     time_added = models.DateTimeField(auto_now_add=True,null=True,blank=True)
-    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
+    earnedPoints=models.FloatField(null=True,blank=True,verbose_name='Points')
 
     def __str__(self):
         return f"{self.text[:50]}..."
@@ -84,7 +84,7 @@ class Task3Text(models.Model):
 class Leaderboard(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
     name=models.CharField(max_length=100,null=True,blank=True,verbose_name="Name")
-    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
+    earnedPoints=models.FloatField(null=True,blank=True,verbose_name='Points')
 
     def __str__(self):
         return self.player.username
