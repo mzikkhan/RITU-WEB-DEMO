@@ -1,0 +1,64 @@
+
+<!--This has a problem with radio buttons
+all item gets selected when male is selected and other 2 button cant be selected at first
+need to fix this-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritu-Create your Account</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'signUpForm.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="title">SignUp Form</div>
+        
+        <form method="POST" action="signup" autocomplete="off" class="sign-up-form">
+            {% csrf_token %}
+            <div class="user-details">
+                <div class="inputBox">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="Enter Your Full Name" required name="fullname">
+                </div>
+                <div class="inputBox">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Enter Your Username" required name="username">
+                </div>
+                <div class="inputBox">
+                    <span class="details">Email</span>
+                    <input type="email" placeholder="Enter Your Email" required name="email">
+                </div>
+                <div class="inputBox">
+                    <span class="details">Phone Number</span>
+                    <input type="number" placeholder="Enter Your Phone number" required name="mobileNumber">
+                </div>
+                <div class="inputBox">
+                    <span class="details">Address</span>
+                    <input type="text" placeholder="Enter Your address" required name="address">
+                </div>
+                <div class="inputBox">
+                    <span class="details">Password</span>
+                    <input type="password" placeholder="Enter a strong password" required name="password">
+                </div>
+                <div class="inputBox">
+                    <span class="details">Confirm Password</span>
+                    <input type="password" placeholder="Confirm Password" required name="confirmPassword">
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="SignUp" class="sign-btn">
+            </div>
+            <div class="error">
+                {% for message in messages %}
+                    <p class="message">{{message}}</p>
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+</body>
+</html>

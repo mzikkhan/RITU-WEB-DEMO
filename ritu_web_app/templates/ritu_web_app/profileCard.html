@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RITU</title>
+
+    <link rel="stylesheet" href="{% static 'profileCard.css' %}">
+    
+    <script src="https://kit.fontawesome.com/f6a195ab53.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="max-width">
+        <div class="logo"><a href="#"><span>R</span>itu.</span></a></div>
+        <ul class="menu">
+          <li class="nav-item"><a class="nav-link" href="{% url 'users:menu' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:profileCard' %}">Profile</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'ritu_web_app:leaderboard' %}">Leaderboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:marketplace' %}">Marketplace</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:homepage' %}">Log Out</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="profile-card">
+      <div class="card-header">
+        <div class="picture">
+          <img src='{{MEDIA_URL}}{{picture}}'>
+        </div>
+        <div class="name">{{name}}</div>
+        <div class="username">Username: {{username}}</div>
+        <div class="mon">Contact No: {{mobileNum}}</div>
+        <div class="address">Address: {{address}}</div>
+        
+        <form method="POST" action="profile" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="picture-upload">
+          
+          <label class="details">Change Profile Picture:</label>
+          <span><input type="file" name="picture"></span>
+          <input type="submit" class="submit-btn",value="Change">
+        </div>
+        <div class="gameInfo">
+          <div class="numbers">
+            <div class="tasks">
+              <span class="points">{{task1point}}</span>
+              <p class="time">{{task1time}}</p>
+              Task1
+            </div>
+            <div class="tasks">
+              <span class="points">{{task2point}}</span>
+              <p class="time">{{task2time}}</p>
+              Task2
+            </div>
+            <div class="tasks">
+              <span class="points">{{task3point}}</span>
+              <p class="time">{{task3time}}</p>
+              Task3
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </body>
+</html>
+
+
+
+
+
+
+
