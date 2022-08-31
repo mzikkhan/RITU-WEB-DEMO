@@ -50,8 +50,6 @@ def showLeaderboard(request):
     
     context={'datas':data,
     }
-    print(context)
-    #print(context)
     return render(request, 'ritu_web_app/Leaderboard.html',context)
 
 def marketplace(request):
