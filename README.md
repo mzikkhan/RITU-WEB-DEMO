@@ -4,4 +4,4 @@ Twist: These tasks are designed to help fight climate change
 
 Tasks vary from planting trees,cleaning up roads,replacing filament bulbs with energy saving light-bulbs,etc. This application was developed with the aim to provide a financial and competetive incentive to youngsters in order to make them lead a more sustainable life and act in unison to protect our Mother Earth from the perils of climate change.
 
-This is the website application for RITU - this was developed with my teammates Absara Chowdhury and Zaed Khan, who are listed as collaborators. The website can be accessed here: http://ritucodeparina.pythonanywhere.com/
+This is the website application for RITU - this was developed with my teammates Absara Chowdhury and Zaed Khan, who are listed as collaborators. The website can be accessed here: http://ritucodeparinagg.pythonanywhere.com/
