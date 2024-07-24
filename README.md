@@ -1,7 +1,7 @@
-Created a game targeting youngsters whereby they have to complete tasks in real life and upload evidence of completion on the application. The players who complete tasks earn points based on the time taken for completion. The player atop the leaderboard at the end of the season wins a cash prize!
+# RITU
 
-Twist: These tasks are designed to help fight climate change
+This project comprises a web application designed to promote environmental awareness among ordinary citizens. The web app, with its frontend developed using HTML, CSS, JavaScript and backend developed using Django connected to an SQLite3 database, enables users to compete against each other in completing tasks designed to help fight climate change, e.g - plant a tree, replace filament bulb with energy-saving bulb, recycle plastic bottles. Our goal was that if we give ordinary citizens a competitive incentive to act sustainably, then we could generate greater environmental awareness.
 
-Tasks vary from planting trees,cleaning up roads,replacing filament bulbs with energy saving light-bulbs,etc. This application was developed with the aim to provide a financial and competetive incentive to youngsters in order to make them lead a more sustainable life and act in unison to protect our Mother Earth from the perils of climate change.
+I have worked on this project with my teammates Absara Chowdhury, and Farhan Ishrak Tahmid.
 
-This is the website application for RITU - this was developed with my teammates Absara Chowdhury and Zaed Khan, who are listed as collaborators. The website can be accessed here: http://ritucodeparinagg.pythonanywhere.com/
+This project was completed for my university course CSE311: Database Management Systems.
